@@ -1,0 +1,15 @@
+services:
+  # Pybricks Code
+  pybrickscode:
+    container_name: ${PYBRICKSCODE_CONTAINER_NAME:-PybricksCode}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_TAG: ${NODE_TAG:-12.18.3}
+        PYBRICKSCODE_TAG: ${PYBRICKSCODE_TAG:-v1.0.0-beta.3}
+    restart: ${RESTART:-unless-stopped}
+    healthcheck:
+      test: curl -f http://localhost:80/ || exit 1
+    ports:
+      - ${PYBRICKSCODE_PORT:-80}:80
