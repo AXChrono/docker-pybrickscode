@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         NODE_TAG: ${NODE_TAG:-16.13.1}
-        PYBRICKSCODE_TAG: ${PYBRICKSCODE_TAG:-v2.1.0}
+        PYBRICKSCODE_TAG: ${PYBRICKSCODE_TAG:-v2.1.1}
     restart: ${RESTART:-unless-stopped}
     healthcheck:
       test: curl -f http://localhost:80/ || exit 1
