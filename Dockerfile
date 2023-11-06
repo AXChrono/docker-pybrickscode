@@ -1,6 +1,6 @@
 # Arguments
 ARG NODE_TAG=12.18.3
-ARG PYBRICKSCODE_TAG=v1.1.0-beta.1
+ARG PYBRICKSCODE_TAG=v1.1.0-beta.2
 
 # Build stage
 FROM node:${NODE_TAG} AS build-stage
