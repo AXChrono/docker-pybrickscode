@@ -2,7 +2,7 @@ services:
   # Pybricks Code
   pybrickscode:
     container_name: ${PYBRICKSCODE_CONTAINER_NAME:-PybricksCode}
-    image: axchrono/pybrickscode:${PYBRICKSCODE_TAG:-v1.1.0-beta.2}
+    image: axchrono/pybrickscode:${PYBRICKSCODE_TAG:-v1.1.0-beta.3}
     restart: ${RESTART:-unless-stopped}
     healthcheck:
       test: curl -f http://localhost:80/ || exit 1
