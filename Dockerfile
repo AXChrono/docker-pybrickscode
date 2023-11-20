@@ -1,12 +1,12 @@
 # Arguments
 ARG NODE_TAG=18.15.0
-ARG PYBRICKSCODE_TAG=v2.2.0-beta.9
+ARG PYBRICKSCODE_TAG=v2.2.0-rc.1
 
 # Build stage
 FROM node:${NODE_TAG} AS build-stage
 ARG PYBRICKSCODE_TAG
 WORKDIR /app
-RUN git clone https://github.com/pybricks/pybricks-code -b "${PYBRICKSCODE_TAG}" /app
+RUN git clone https://github.com/pybricks/pybricks-code.git -b "${PYBRICKSCODE_TAG}" /app
 RUN cd /app
 RUN yarn install
 RUN yarn build
